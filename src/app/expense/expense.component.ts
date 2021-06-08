@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EXPENSES } from './expense.constant';
+import { EXPENSES } from './expense.data';
 import { Expense } from './expense.model';
 import { PsSelectChange } from '@paysafe-ui/components/select';
 
