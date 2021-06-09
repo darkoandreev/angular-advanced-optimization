@@ -9,7 +9,7 @@ import { PsSelectChange } from '@paysafe-ui/components/select';
   styleUrls: ['./expense.component.scss']
 })
 export class ExpenseComponent {
-  options = [1, 2, 3, 4];
+  readonly CATEGORIES = [1, 2, 3, 4];
 
   private _expenses: Array<Expense> = EXPENSES;
 
@@ -30,13 +30,17 @@ export class ExpenseComponent {
 
   addNewExpense(): void {
     const expense: Expense = {
-      name: 'Test',
+      name: `Test-${Math.random()}`,
       categoryId: 3,
-      amount: 100,
+      amount: Math.random(),
       currency: 'EUR',
       buyerName: 'Test'
     }
     this._expenses.push(expense)
+  }
+
+  getAmountWithCurrency(expense: Expense): string {
+    return expense.amount + ' ' + expense.currency;
   }
 
   get calculateTotal(): number {

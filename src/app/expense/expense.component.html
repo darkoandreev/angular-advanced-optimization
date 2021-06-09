@@ -4,16 +4,16 @@
       <ps-label>Expense category</ps-label>
       <ps-select (selectionChange)="filterExpenses($event)">
         <ps-option
-          *ngFor="let option of options"
-          [value]="option">
-          {{ option }}
+          *ngFor="let category of CATEGORIES"
+          [value]="category">
+          {{ category }}
         </ps-option>
       </ps-select>
     </ps-form-field>
   </ps-list-item>
   <ps-list-item *ngFor="let expense of expenses; let i = index">
     <ps-list-item-title>{{ expense.name }}</ps-list-item-title>
-    <ps-list-item-subtitle>{{ expense.amount + expense.currency }}</ps-list-item-subtitle>
+    <ps-list-item-subtitle>{{ getAmountWithCurrency(expense) }}</ps-list-item-subtitle>
     <ps-list-item-suffix>
       <ps-icon (click)="delete(i)">delete</ps-icon>
     </ps-list-item-suffix>
