@@ -16,7 +16,6 @@ import { PsHeaderModule } from '@paysafe-ui/components/header';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ExpenseModule,
     PsHeaderModule,
     PsButtonModule
   ],

@@ -1,0 +1,14 @@
+<button ps-primary-button (click)="add.emit()">Add new</button>
+
+<ps-list>
+  <ps-list-item>
+    Total amount: {{ expenses.toArray() | calculateTotalAmount }}
+  </ps-list-item>
+  <ps-list-item *ngFor="let expense of expenses; let index = index">
+    <ps-list-item-title>{{ expense.name }}</ps-list-item-title>
+    <ps-list-item-subtitle>{{ expense | amountCurrency }}</ps-list-item-subtitle>
+    <ps-list-item-suffix>
+      <ps-icon (click)="delete.emit(expense)">delete</ps-icon>
+    </ps-list-item-suffix>
+  </ps-list-item>
+</ps-list>

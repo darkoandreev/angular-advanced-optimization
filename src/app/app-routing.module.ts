@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 const routes: Routes = [
   {
     path: 'home',
-    component: ExpenseComponent
+    loadChildren: () => import('./expense/expense.module').then(m => m.ExpenseModule)
   }
 ];
 

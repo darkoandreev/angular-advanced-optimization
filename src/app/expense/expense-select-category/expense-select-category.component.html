@@ -1,0 +1,10 @@
+<ps-form-field>
+  <ps-label>Expense category</ps-label>
+  <ps-select (selectionChange)="categorySelected.emit($event.value)">
+    <ps-option
+      *ngFor="let category of categories"
+      [value]="category">
+      {{ category }}
+    </ps-option>
+  </ps-select>
+</ps-form-field>
