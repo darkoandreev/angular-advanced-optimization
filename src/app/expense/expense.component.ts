@@ -36,7 +36,7 @@ export class ExpenseComponent {
       currency: 'EUR',
       buyerName: 'Test'
     }
-    this._expenses.push(expense)
+    this._expenses.unshift(expense)
   }
 
   getAmountWithCurrency(expense: Expense): string {

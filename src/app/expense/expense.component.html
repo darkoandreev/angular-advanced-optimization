@@ -1,26 +1,28 @@
-<ps-list>
-  <ps-list-item>
-    <ps-form-field>
-      <ps-label>Expense category</ps-label>
-      <ps-select (selectionChange)="filterExpenses($event)">
-        <ps-option
-          *ngFor="let category of CATEGORIES"
-          [value]="category">
-          {{ category }}
-        </ps-option>
-      </ps-select>
-    </ps-form-field>
-  </ps-list-item>
-  <ps-list-item *ngFor="let expense of expenses; let i = index">
-    <ps-list-item-title>{{ expense.name }}</ps-list-item-title>
-    <ps-list-item-subtitle>{{ getAmountWithCurrency(expense) }}</ps-list-item-subtitle>
-    <ps-list-item-suffix>
-      <ps-icon (click)="delete(i)">delete</ps-icon>
-    </ps-list-item-suffix>
-  </ps-list-item>
-  <ps-list-item>
-    Total amount: {{ calculateTotal }}
-  </ps-list-item>
-</ps-list>
+<div class="list-container">
+  <ps-list>
+    <ps-list-item [isHeader]="true">
+      <ps-form-field>
+        <ps-label>Expense category</ps-label>
+        <ps-select (selectionChange)="filterExpenses($event)">
+          <ps-option
+            *ngFor="let category of CATEGORIES"
+            [value]="category">
+            {{ category }}
+          </ps-option>
+        </ps-select>
+      </ps-form-field>
+    </ps-list-item>
+    <ps-list-item *ngFor="let expense of expenses; let i = index">
+      <ps-list-item-title>{{ expense.name }}</ps-list-item-title>
+      <ps-list-item-subtitle>{{ getAmountWithCurrency(expense) }}</ps-list-item-subtitle>
+      <ps-list-item-suffix>
+        <ps-icon (click)="delete(i)">delete</ps-icon>
+      </ps-list-item-suffix>
+    </ps-list-item>
+    <ps-list-item>
+      Total amount: {{ calculateTotal }}
+    </ps-list-item>
+  </ps-list>
+</div>
 
 <button ps-primary-button (click)="addNewExpense()">Add new</button>
