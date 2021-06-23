@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PsButtonModule } from '@paysafe-ui/components/button';
 import { PsHeaderModule } from '@paysafe-ui/components/header';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
